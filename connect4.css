@@ -1,5 +1,62 @@
-/* game board table */
+body {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  background-color: #E0F2F1;
+  font-family: 'Roboto', sans-serif;
+}
 
+/* player turn styling */
+
+.player1::after {
+  content: "1";
+}
+
+.player2::after {
+  content: "2";
+}
+
+/* Game Centered */
+#game {
+  text-align: center;
+  justify-content: center;
+  /* align-items: center; */
+  flex-wrap: nowrap;
+  display: flex;
+}
+
+#player-1-custom {
+  margin-right: 40px;
+  text-align: center;
+  background-color: #ffffff;
+  width: 200px;;
+  border-radius: 2px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  margin-bottom: 30px;
+  padding: 5px;
+}
+
+#player-2-custom {
+  margin-left: 40px;
+  text-align: center;
+  background-color: #ffffff;
+  width: 200px;;
+  border-radius: 2px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  margin-bottom: 30px;
+  padding: 5px;
+}
+
+#board {
+  display: inline-block;
+  background-color: #ffffff;
+  border-radius: 2px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  margin-bottom: 30px;
+  padding: 5px;
+}
+
+/* game board table */
 #board td {
   width: 50px;
   height: 50px;
@@ -7,7 +64,6 @@
 }
 
 /* pieces are div within game table cells: draw as colored circles */
-
 .piece {
   margin: 5px;
   width: 80%;
@@ -20,6 +76,7 @@
 .p1 {
   background-color: blue;
 }
+
 .p2 {
   background-color: red;
 }

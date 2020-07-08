@@ -11,6 +11,8 @@ const HEIGHT = 6;
 let currPlayer = 1; // active player: 1 or 2
 let board = []; // array of rows, each row is array of cells  (board[y][x])
 
+const playerTurn = document.getElementById('player-turn'); //used to update the players turn in the DOM
+
 /** makeBoard: create in-JS board structure:
  *    board = array of rows, each row is array of cells  (board[y][x])
  */
@@ -22,7 +24,6 @@ function makeBoard() {
     for(let j = 0; j < WIDTH; j++)
     board[i][j] = null;
   }
-  console.log(board)
 }
 
 /** makeHtmlBoard: make HTML table and row of column tops. */
@@ -52,6 +53,10 @@ function makeHtmlBoard() {
     htmlBoard.append(row);
   }
 }
+
+
+
+
 
 /** findSpotForCol: given column x, return top empty y (null if filled) */
 
@@ -125,6 +130,9 @@ function handleClick(evt) {
   // switch players
   // TODO: switch currPlayer 1 <-> 2
   currPlayer === 1 ? (currPlayer = 2) : (currPlayer = 1);
+
+  // Toggle which players turn it is
+  currPlayer === 1 ? (playerTurn.classList = 'player1') : (playerTurn.classList = 'player2');
 }
 
 /** checkForWin: check board cell-by-cell for "does a win start here?" */
