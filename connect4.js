@@ -106,16 +106,20 @@ function handleClick(evt) {
 
   // check for win
   if (checkForWin()) {
-    console.log("Checking for win")
-    return endGame(`Player ${currPlayer} won!`);
+    return setTimeout(function(){
+      endGame(`Player ${currPlayer} won!`);
+    }, 50)
   }
 
   // check for tie
   // TODO: check if all cells in board are filled; if so call, call endGame
   if(board.every((row) => {
-    console.log(row.every(Boolean))
     return row.every(Boolean);
-  })) { endGame("It's a tie!") }
+  })) { 
+    setTimeout(function(){
+    endGame(`It's a tie!`);
+  }, 50) 
+}
 			
 
   // switch players
