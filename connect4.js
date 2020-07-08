@@ -84,6 +84,7 @@ function placeInTable(y, x) {
 
 function endGame(msg) {
   // TODO: pop up alert message
+  alert(msg)
 }
 
 /** handleClick: handle click of column top to play piece */
@@ -103,18 +104,19 @@ function handleClick(evt) {
   placeInTable(y, x);
   board[y][x] = currPlayer;
 
-  if(board.every((row) => {
-      console.log(row.every(Boolean))
-      return row.every(Boolean)
-  }))
-
   // check for win
   if (checkForWin()) {
+    console.log("Checking for win")
     return endGame(`Player ${currPlayer} won!`);
   }
 
   // check for tie
   // TODO: check if all cells in board are filled; if so call, call endGame
+  if(board.every((row) => {
+    console.log(row.every(Boolean))
+    return row.every(Boolean);
+  })) { endGame("It's a tie!") }
+			
 
   // switch players
   // TODO: switch currPlayer 1 <-> 2
