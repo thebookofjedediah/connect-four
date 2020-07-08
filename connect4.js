@@ -67,7 +67,7 @@ function placeInTable(y, x) {
   let placement = document.getElementById(`${y}-${x}`);
   let piece = document.createElement('div');
   piece.classList.add('piece')
-  if(currPlayer = 1){
+  if(currPlayer === 1){
     piece.classList.add('p1');
   } else {
     piece.classList.add('p2');
@@ -96,6 +96,12 @@ function handleClick(evt) {
   // place piece in board and add to HTML table
   // TODO: add line to update in-memory board
   placeInTable(y, x);
+  board[y][x] = currPlayer;
+
+  if(board.every((row) => {
+      console.log(row.every(Boolean))
+      return row.every(Boolean)
+  }))
 
   // check for win
   if (checkForWin()) {
@@ -107,6 +113,7 @@ function handleClick(evt) {
 
   // switch players
   // TODO: switch currPlayer 1 <-> 2
+  currPlayer === 1 ? (currPlayer = 2) : (currPlayer = 1);
 }
 
 /** checkForWin: check board cell-by-cell for "does a win start here?" */
