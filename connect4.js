@@ -16,7 +16,7 @@ let board = []; // array of rows, each row is array of cells  (board[y][x])
  */
 
 function makeBoard() {
-  // TODO: set "board" to empty HEIGHT x WIDTH matrix array
+  // set "board" to empty HEIGHT x WIDTH matrix array
   for(let i = 0; i < HEIGHT; i++){
     board[i] = [];
     for(let j = 0; j < WIDTH; j++)
@@ -28,13 +28,12 @@ function makeBoard() {
 /** makeHtmlBoard: make HTML table and row of column tops. */
 
 function makeHtmlBoard() {
-  // TODO: get "htmlBoard" variable from the item in HTML w/ID of "board"
+  // get "htmlBoard" variable from the item in HTML w/ID of "board"
   let htmlBoard = document.getElementById('board')
-  // TODO: add comment for this code
+  // create a table row for the top of the board, give it an id, and add a click event handler
   let top = document.createElement("tr");
   top.setAttribute("id", "column-top");
   top.addEventListener("click", handleClick);
-
   for (var x = 0; x < WIDTH; x++) {
     let headCell = document.createElement("td");
     headCell.setAttribute("id", x);
@@ -42,7 +41,7 @@ function makeHtmlBoard() {
   }
   htmlBoard.append(top);
 
-  // TODO: add comment for this code
+  // set the board height and width dynamically, adding ids based off their position
   for (var y = 0; y < HEIGHT; y++) {
     const row = document.createElement("tr");
     for (var x = 0; x < WIDTH; x++) {
@@ -65,6 +64,15 @@ function findSpotForCol(x) {
 
 function placeInTable(y, x) {
   // TODO: make a div and insert into correct table cell
+  let placement = document.getElementById(`${y}-${x}`);
+  let piece = document.createElement('div');
+  piece.classList.add('piece')
+  if(currPlayer = 1){
+    piece.classList.add('p1');
+  } else {
+    piece.classList.add('p2');
+  }
+  placement.append(piece)
 }
 
 /** endGame: announce game end */
