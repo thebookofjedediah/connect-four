@@ -14,9 +14,7 @@ let player2Color = "red";
 
 form1.addEventListener("submit", function(e){
   e.preventDefault();
-  console.log(player1Color)
   player1Color = colorInput.value;
-  console.log(player1Color)
   let playerPieces = document.getElementsByClassName('p1');
   for (let i = 0, max = playerPieces.length; i < max; i++) {
   playerPieces[i].style.backgroundColor = colorInput.value;
@@ -25,14 +23,17 @@ form1.addEventListener("submit", function(e){
 
 form2.addEventListener("submit", function(e){
   e.preventDefault();
-  console.log(player2Color)
   player2Color = inputColor.value;
-  console.log(player2Color)
   let playerPieces = document.getElementsByClassName('p2');
   for (let i = 0, max = playerPieces.length; i < max; i++) {
   playerPieces[i].style.backgroundColor = inputColor.value;
   }
 });
+
+const restartGame = document.getElementById('restartGame');
+restartGame.addEventListener("click", function(e){
+  window.location.reload();
+})
 
 
 const WIDTH = 7;

@@ -1,3 +1,6 @@
+/* colors selected using the "teal" palette from https://material.io/design/color/the-color-system.html#tools-for-picking-colors */
+
+
 body {
   padding: 0;
   margin: 0;
@@ -14,6 +17,26 @@ body {
 
 .player2::after {
   content: "2";
+}
+
+#restartGame {
+  font-size: 1.2em;
+  margin: 30px auto;
+  padding: 12px 24px;
+  overflow: hidden;
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+  background-color: #009688;
+  color: #ecf0f1;
+  transition: background-color .3s;
+}
+
+
+#restartGame:hover {
+  background-color: #4db6ac;
+  cursor: pointer;
 }
 
 /* Game Centered */
