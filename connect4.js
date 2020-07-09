@@ -5,6 +5,36 @@
  * board fills (tie)
  */
 
+const form1 = document.querySelector("#form1");
+const colorInput = document.querySelector('#color1');
+const form2 = document.querySelector("#form2");
+const inputColor = document.querySelector('#color2');
+let player1Color = "blue";
+let player2Color = "red";
+
+form1.addEventListener("submit", function(e){
+  e.preventDefault();
+  console.log(player1Color)
+  player1Color = colorInput.value;
+  console.log(player1Color)
+  let playerPieces = document.getElementsByClassName('p1');
+  for (let i = 0, max = playerPieces.length; i < max; i++) {
+  playerPieces[i].style.backgroundColor = colorInput.value;
+  }
+});
+
+form2.addEventListener("submit", function(e){
+  e.preventDefault();
+  console.log(player2Color)
+  player2Color = inputColor.value;
+  console.log(player2Color)
+  let playerPieces = document.getElementsByClassName('p2');
+  for (let i = 0, max = playerPieces.length; i < max; i++) {
+  playerPieces[i].style.backgroundColor = inputColor.value;
+  }
+});
+
+
 const WIDTH = 7;
 const HEIGHT = 6;
 
@@ -76,11 +106,16 @@ function placeInTable(y, x) {
   // TODO: make a div and insert into correct table cell
   let placement = document.getElementById(`${y}-${x}`);
   let piece = document.createElement('div');
+  // customize player color
+
+  // add proper className
   piece.classList.add('piece')
   if(currPlayer === 1){
     piece.classList.add('p1');
+    piece.style.backgroundColor = player1Color;
   } else {
     piece.classList.add('p2');
+    piece.style.backgroundColor = player2Color;
   }
   placement.append(piece)
 }

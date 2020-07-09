@@ -34,6 +34,7 @@ body {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   margin-bottom: 30px;
   padding: 5px;
+  height: 150px;
 }
 
 #player-2-custom {
@@ -45,6 +46,7 @@ body {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   margin-bottom: 30px;
   padding: 5px;
+  height: 150px;
 }
 
 #board {
